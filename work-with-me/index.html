@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work With Me — Christina Roberts Enneking</title>
-    <meta name="description" content="Three ways to do this work together — the REAL Heroic Journey Sprint, The Irreplaceable You, and Wounds to Wisdom. Choose the depth that fits where you are.">
+    <meta name="description" content="Two paths, one question. Private executive coaching, leadership facilitation, keynotes, and retreats — alongside three group programs in the REAL Heroic Journey arc.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -48,8 +48,7 @@
 
         /* ─── Utility ─── */
         .container { max-width: 780px; margin: 0 auto; padding: 0 2.5rem; }
-        .container--wide { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem; }
-        .text-center { text-align: center; }
+        .container--wide { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
 
         /* ─── Typography ─── */
         h1, h2, h3, h4 {
@@ -68,7 +67,7 @@
             letter-spacing: -0.015em;
             margin-bottom: 1rem;
         }
-        h3 { font-size: 1.5rem; color: var(--teal-dark); margin-bottom: 0.75rem; }
+        h3 { font-size: 1.4rem; color: var(--teal-dark); margin-bottom: 0.6rem; }
 
         p { margin-bottom: 1.25rem; color: var(--text-medium); }
         .lead { font-size: 1.15rem; line-height: 1.85; color: var(--text-medium); }
@@ -127,7 +126,7 @@
             box-shadow: 0 4px 16px rgba(155, 138, 48, 0.2);
         }
 
-        /* ─── Top accent bar ─── */
+        /* ─── Top accent ─── */
         .topbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -165,7 +164,7 @@
             font-weight: 400;
         }
         .hero .lead {
-            max-width: 620px;
+            max-width: 640px;
             margin: 0 auto;
         }
         .hero__divider {
@@ -175,16 +174,132 @@
             margin: 3.5rem auto 0;
         }
 
-        /* ─── Program cards ─── */
+        /* ─── Tier section ─── */
+        .tier {
+            padding: 5rem 0 4rem;
+        }
+        .tier__header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem;
+        }
+        .tier__numeral {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 2.4rem;
+            color: var(--gold);
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .tier__numeral::before,
+        .tier__numeral::after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--divider);
+            vertical-align: middle;
+            margin: 0 1rem;
+        }
+        .tier__heading {
+            margin-bottom: 0.85rem;
+        }
+        .tier__sub {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.75;
+        }
+
+        /* ─── Tier 1: private cards (compact grid) ─── */
+        .private-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.5rem;
+        }
+        .private-card {
+            background: var(--white);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 2.4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        border-color 0.4s ease;
+        }
+        .private-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 44px rgba(0, 51, 52, 0.08), 0 4px 14px rgba(0, 51, 52, 0.04);
+            border-color: var(--teal-light);
+        }
+        .private-card h3 {
+            color: var(--teal-deep);
+            margin-bottom: 0.6rem;
+        }
+        .private-card__tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--gold-dark);
+            line-height: 1.45;
+            margin-bottom: 1.1rem;
+            font-weight: 400;
+        }
+        .private-card__desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .private-card__link {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--teal-bright);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: auto;
+            transition: gap 0.3s ease, color 0.3s ease;
+        }
+        .private-card:hover .private-card__link {
+            color: var(--teal-deep);
+            gap: 0.7rem;
+        }
+
+        /* ─── Tier divider ─── */
+        .tier-divider {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .tier-divider::before {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 1px;
+            background: var(--divider);
+            margin: 0 auto;
+        }
+
+        /* ─── Tier 2: group programs (full cards) ─── */
         .programs {
-            padding: 1rem 0 4rem;
+            padding: 0 0 4rem;
         }
         .program-card {
             background: var(--white);
             border: 1px solid var(--divider);
             border-radius: 4px;
-            padding: 4rem 3.5rem;
-            margin-bottom: 2.5rem;
+            padding: 3.5rem 3rem;
+            margin-bottom: 2rem;
             position: relative;
             display: grid;
             grid-template-columns: 110px 1fr;
@@ -204,7 +319,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-weight: 300;
-            font-size: clamp(4.5rem, 6vw, 6rem);
+            font-size: clamp(4rem, 5vw, 5.5rem);
             color: var(--gold);
             line-height: 1;
             text-align: center;
@@ -226,29 +341,30 @@
         }
 
         .program-card h2 {
-            margin-bottom: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         .program-card__tagline {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-medium);
             line-height: 1.5;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.4rem;
             font-weight: 400;
         }
 
         .program-card__bullets {
             list-style: none;
-            margin: 0 0 2rem;
+            margin: 0 0 1.85rem;
             padding: 0;
         }
         .program-card__bullets li {
-            padding: 0.4rem 0 0.4rem 1.5rem;
+            padding: 0.35rem 0 0.35rem 1.5rem;
             position: relative;
             color: var(--text-medium);
             line-height: 1.6;
+            font-size: 0.97rem;
         }
         .program-card__bullets li::before {
             content: '◆';
@@ -258,8 +374,6 @@
             color: var(--gold);
             font-size: 0.6rem;
         }
-
-        .program-card .btn { margin-top: 0.5rem; }
 
         /* ─── Connection band ─── */
         .connection {
@@ -271,7 +385,7 @@
         }
         .connection h2 { margin-bottom: 1rem; }
         .connection p {
-            max-width: 540px;
+            max-width: 560px;
             margin: 0 auto 2.5rem;
         }
         .connection__buttons {
@@ -317,18 +431,17 @@
         @media (max-width: 720px) {
             .program-card {
                 grid-template-columns: 1fr;
-                padding: 3rem 2rem;
-                gap: 0.75rem;
+                padding: 2.5rem 2rem;
+                gap: 0.5rem;
                 text-align: center;
             }
             .program-card__numeral {
-                font-size: 3.5rem;
+                font-size: 3.2rem;
                 margin-bottom: 0.5rem;
             }
-            .program-card__bullets li {
+            .program-card__bullets {
+                display: inline-block;
                 text-align: left;
-                max-width: 360px;
-                margin: 0 auto;
             }
             .connection__buttons { flex-direction: column; align-items: center; }
             .connection__buttons .btn { width: 100%; max-width: 320px; }
@@ -353,66 +466,133 @@
     <section class="hero">
         <div class="container">
             <span class="eyebrow">Work With Me</span>
-            <h1>Three ways we can do<br>this work <em>together.</em></h1>
-            <p class="lead">Each begins in the same place &mdash; the question of who you actually are beneath what you've built.</p>
+            <h1>Two paths.<br><em>One question.</em></h1>
+            <p class="lead">Whether you want the depth of one&#8209;on&#8209;one work or the strength of a brave group, every path here begins with the same question &mdash; who are you beneath what you've built?</p>
             <div class="hero__divider"></div>
         </div>
     </section>
 
     <!-- ════════════════════════════════════════
-         PROGRAM CARDS
+         TIER 1 — PRIVATE & BESPOKE
     ════════════════════════════════════════ -->
-    <section class="programs">
+    <section class="tier">
         <div class="container--wide">
+            <div class="tier__header fade-in">
+                <span class="tier__numeral">I</span>
+                <h2 class="tier__heading">Private &amp; Bespoke</h2>
+                <p class="tier__sub">For executives, founders, organizations, and audiences who want work shaped entirely around their context. Every engagement is custom &mdash; we build it together.</p>
+            </div>
 
-            <!-- I — The Sprint -->
-            <article class="program-card fade-in">
-                <div class="program-card__numeral">I</div>
-                <div class="program-card__body">
-                    <span class="program-card__eyebrow">4-Week Intensive &middot; Group Coaching &middot; $400</span>
-                    <h2>The REAL Heroic Journey Sprint</h2>
-                    <p class="program-card__tagline">A four-week reset for the leader who can feel something shifting and is ready to listen.</p>
-                    <ul class="program-card__bullets">
-                        <li>Step out of autopilot, into intentional leadership</li>
-                        <li>Get clear on what actually matters now</li>
-                        <li>Walk away with one real next step &mdash; not a list of ideas</li>
-                    </ul>
-                    <a href="https://go.christinarobertsenneking.com/sprint/" class="btn btn--primary">Explore the Sprint &rarr;</a>
-                </div>
-            </article>
+            <div class="private-grid">
 
-            <!-- II — The Irreplaceable You -->
-            <article class="program-card fade-in">
-                <div class="program-card__numeral">II</div>
-                <div class="program-card__body">
-                    <span class="program-card__eyebrow">4-Week Group Journey &middot; $400</span>
-                    <h2>The Irreplaceable You</h2>
-                    <p class="program-card__tagline">A guided remembering of what only you can carry &mdash; in an age where everything else can be optimized.</p>
-                    <ul class="program-card__bullets">
-                        <li>Reclaim what isn't replaceable in you</li>
-                        <li>Move from credentials to truth</li>
-                        <li>Lead from what only you can bring into the room</li>
-                    </ul>
-                    <a href="https://go.christinarobertsenneking.com/irreplaceable/" class="btn btn--primary">Explore Irreplaceable You &rarr;</a>
-                </div>
-            </article>
+                <!-- Executive Coaching -->
+                <a class="private-card fade-in" href="https://christinarobertsenneking.com/executive-coaching-1">
+                    <h3>Executive Coaching</h3>
+                    <p class="private-card__tagline">Live in balance between the brain and the heart.</p>
+                    <p class="private-card__desc">Customized 1:1 sessions to sharpen communication, leadership, motivation, and influence &mdash; and to build the self-awareness that lets you lead from both intellect and intuition.</p>
+                    <span class="private-card__link">Explore Executive Coaching &rarr;</span>
+                </a>
 
-            <!-- III — Wounds to Wisdom -->
-            <article class="program-card fade-in">
-                <div class="program-card__numeral">III</div>
-                <div class="program-card__body">
-                    <span class="program-card__eyebrow">16-Week Deep Journey &middot; Group Coaching &middot; $1,008</span>
-                    <h2>Wounds to Wisdom</h2>
-                    <p class="program-card__tagline">The full REAL Heroic Journey &mdash; sixteen weeks of honest, guided transformation to lead your life from truth again.</p>
-                    <ul class="program-card__bullets">
-                        <li>Reckon with what's no longer working</li>
-                        <li>Excavate what you've buried beneath the role</li>
-                        <li>Live and lead authentically</li>
-                    </ul>
-                    <a href="https://go.christinarobertsenneking.com/wounds-to-wisdom/" class="btn btn--primary">Explore Wounds to Wisdom &rarr;</a>
-                </div>
-            </article>
+                <!-- Leadership Facilitation -->
+                <a class="private-card fade-in" href="https://christinarobertsenneking.com/leadership-facilitation">
+                    <h3>Leadership Facilitation</h3>
+                    <p class="private-card__tagline">Change agent. Innovation catalyst. Mentor for organizational simplicity.</p>
+                    <p class="private-card__desc">Workshops and offsites that build courageous leaders, accelerate change, and cultivate purpose-driven cultures &mdash; from "Transformational Leadership" to "Storytelling for Impact."</p>
+                    <span class="private-card__link">Explore Leadership Facilitation &rarr;</span>
+                </a>
 
+                <!-- Keynote Speaking -->
+                <a class="private-card fade-in" href="https://christinarobertsenneking.com/keynote-speaker">
+                    <h3>Keynote Speaking</h3>
+                    <p class="private-card__tagline">Wisdom from engaging stories and relevant research.</p>
+                    <p class="private-card__desc">Talks on authentic leadership, neuroscience and mindfulness, and the heart-and-art of innovation &mdash; tailored to your audience and the moment they're in.</p>
+                    <span class="private-card__link">Explore Keynotes &rarr;</span>
+                </a>
+
+                <!-- 1:1 REAL Heroic Journey -->
+                <a class="private-card fade-in" href="https://christinarobertsenneking.com/real-heroic-journey-coaching">
+                    <h3>1:1 REAL Heroic Journey Coaching</h3>
+                    <p class="private-card__tagline">Explore your own REAL Heroic Journey.</p>
+                    <p class="private-card__desc">Bi-weekly 90-minute private sessions for the high-performing leader ready to shed outdated success stories, reclaim their voice, and step into the next chapter.</p>
+                    <span class="private-card__link">Explore 1:1 Coaching &rarr;</span>
+                </a>
+
+                <!-- Retreats -->
+                <a class="private-card fade-in" href="https://christinarobertsenneking.com/retreat">
+                    <h3>Retreats</h3>
+                    <p class="private-card__tagline">To journey and be transformed is to be a pilgrim.</p>
+                    <p class="private-card__desc">Immersive sacred journeys where ancient wisdom meets modern mindfulness. Next: <strong>Bhutan and India, October 13&ndash;27, 2026.</strong></p>
+                    <span class="private-card__link">Explore Retreats &rarr;</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="tier-divider"></div>
+
+    <!-- ════════════════════════════════════════
+         TIER 2 — GROUP PROGRAMS
+    ════════════════════════════════════════ -->
+    <section class="tier">
+        <div class="container--wide">
+            <div class="tier__header fade-in">
+                <span class="tier__numeral">II</span>
+                <h2 class="tier__heading">Group Programs</h2>
+                <p class="tier__sub">Fixed-format experiences built to be done alongside fellow travelers &mdash; the same depth as the private work, with the strength of a brave group around you.</p>
+            </div>
+
+            <div class="programs">
+
+                <!-- The Sprint -->
+                <article class="program-card fade-in">
+                    <div class="program-card__numeral">I</div>
+                    <div class="program-card__body">
+                        <span class="program-card__eyebrow">4-Week Intensive &middot; Group Coaching &middot; $400</span>
+                        <h2>The REAL Heroic Journey Sprint</h2>
+                        <p class="program-card__tagline">A four-week reset for the leader who can feel something shifting and is ready to listen.</p>
+                        <ul class="program-card__bullets">
+                            <li>Step out of autopilot, into intentional leadership</li>
+                            <li>Get clear on what actually matters now</li>
+                            <li>Walk away with one real next step &mdash; not a list of ideas</li>
+                        </ul>
+                        <a href="https://go.christinarobertsenneking.com/sprint/" class="btn btn--primary">Explore the Sprint &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- The Irreplaceable You -->
+                <article class="program-card fade-in">
+                    <div class="program-card__numeral">II</div>
+                    <div class="program-card__body">
+                        <span class="program-card__eyebrow">4-Week Group Journey &middot; $400</span>
+                        <h2>The Irreplaceable You</h2>
+                        <p class="program-card__tagline">A guided remembering of what only you can carry &mdash; in an age where everything else can be optimized.</p>
+                        <ul class="program-card__bullets">
+                            <li>Reclaim what isn't replaceable in you</li>
+                            <li>Move from credentials to truth</li>
+                            <li>Lead from what only you can bring into the room</li>
+                        </ul>
+                        <a href="https://go.christinarobertsenneking.com/irreplaceable/" class="btn btn--primary">Explore Irreplaceable You &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Wounds to Wisdom -->
+                <article class="program-card fade-in">
+                    <div class="program-card__numeral">III</div>
+                    <div class="program-card__body">
+                        <span class="program-card__eyebrow">16-Week Deep Journey &middot; Group Coaching &middot; $1,008</span>
+                        <h2>Wounds to Wisdom</h2>
+                        <p class="program-card__tagline">The full REAL Heroic Journey &mdash; sixteen weeks of honest, guided transformation to lead your life from truth again.</p>
+                        <ul class="program-card__bullets">
+                            <li>Reckon with what's no longer working</li>
+                            <li>Excavate what you've buried beneath the role</li>
+                            <li>Live and lead authentically</li>
+                        </ul>
+                        <a href="https://go.christinarobertsenneking.com/wounds-to-wisdom/" class="btn btn--primary">Explore Wounds to Wisdom &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
@@ -421,9 +601,9 @@
     ════════════════════════════════════════ -->
     <section class="connection">
         <div class="container">
-            <span class="eyebrow">Not Sure Which Is Right For You?</span>
+            <span class="eyebrow">Not Sure Which Path Is Right?</span>
             <h2>Let's talk it through.</h2>
-            <p>Grab fifteen minutes on my calendar &mdash; or send me a note. I'll help you find the right fit, even if it isn't one of these three.</p>
+            <p>Grab fifteen minutes on my calendar &mdash; or send me a note. I'll help you find the right fit, even if it isn't one of these.</p>
             <div class="connection__buttons">
                 <a href="https://calendly.com/cenneking/connection-call" target="_blank" rel="noopener" class="btn btn--primary">Book a Connection Call</a>
                 <a href="mailto:cenneking@me.com" class="btn btn--secondary">Email Me</a>
