@@ -135,43 +135,116 @@
             z-index: 100;
         }
 
-        /* ─── Header ─── */
-        .site-header {
-            padding: 2.5rem 2.5rem 0;
-            text-align: center;
-        }
-        .site-header img {
-            height: 84px;
-            width: auto;
-            opacity: 0.92;
-        }
-
-        /* ─── Hero ─── */
-        .hero {
-            padding: 4rem 0 5rem;
-            text-align: center;
+        /* ─── Hero Banner (cinematic, photo-driven) ─── */
+        .hero-banner {
             position: relative;
+            min-height: 580px;
+            height: 78vh;
+            max-height: 900px;
+            background-image:
+                linear-gradient(180deg, rgba(0, 51, 52, 0.42) 0%, rgba(0, 51, 52, 0.65) 100%),
+                url('banner.jpg');
+            background-size: cover;
+            background-position: center 45%;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--cream);
+            padding: 5rem 2rem 6rem;
+            overflow: hidden;
+            margin-top: 3px; /* clear the topbar */
         }
-        .hero h1 {
-            margin-bottom: 1.75rem;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 130px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 51, 52, 0.55) 100%);
+            pointer-events: none;
         }
-        .hero h1 em {
+        .hero-banner__logo-link {
+            display: inline-block;
+            margin-bottom: 2.4rem;
+            opacity: 0.92;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .hero-banner__logo-link:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+        .hero-banner__logo {
+            height: 64px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .hero-banner__inner {
+            position: relative;
+            max-width: 760px;
+            z-index: 2;
+        }
+        .hero-banner .eyebrow {
+            color: var(--gold-light);
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.28em;
+            font-size: 0.78rem;
+        }
+        .hero-banner h1 {
+            color: var(--cream);
+            font-size: clamp(2.8rem, 6.5vw, 4.6rem);
+            margin-bottom: 1.85rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+            letter-spacing: -0.02em;
+        }
+        .hero-banner h1 em {
+            color: var(--gold-light);
             font-style: italic;
-            color: var(--teal-bright);
             font-weight: 400;
         }
-        .hero .lead {
-            max-width: 640px;
+        .hero-banner .lead {
+            color: rgba(248, 246, 241, 0.92);
+            font-size: 1.12rem;
+            line-height: 1.85;
+            max-width: 580px;
             margin: 0 auto;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
         }
-        .hero__divider {
-            width: 60px;
-            height: 1px;
-            background: var(--divider);
-            margin: 3.5rem auto 0;
+        .hero-banner__scroll-cue {
+            position: absolute;
+            bottom: 2.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: var(--cream);
+            opacity: 0.65;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+        .hero-banner__scroll-cue:hover {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-3px);
+        }
+        .hero-banner__scroll-cue span {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 1.1rem;
+            letter-spacing: normal;
+            opacity: 0.85;
+        }
+        @media (max-width: 720px) {
+            .hero-banner { min-height: 520px; height: 82vh; padding: 4rem 1.5rem 5rem; }
+            .hero-banner__logo { height: 54px; }
+            .hero-banner__logo-link { margin-bottom: 1.8rem; }
+            .hero-banner h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+            .hero-banner .lead { font-size: 1rem; }
         }
 
         /* ─── Tier section ─── */
@@ -453,29 +526,28 @@
     <!-- Top accent -->
     <div class="topbar"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <a href="https://christinarobertsenneking.com" aria-label="Christina Roberts Enneking">
-            <img src="Christina-Logo-nog.png" alt="Christina Roberts Enneking">
-        </a>
-    </header>
-
     <!-- ════════════════════════════════════════
-         HERO
+         HERO BANNER (Smith Rock pano)
     ════════════════════════════════════════ -->
-    <section class="hero">
-        <div class="container">
+    <section class="hero-banner">
+        <a href="https://christinarobertsenneking.com" class="hero-banner__logo-link" aria-label="Christina Roberts Enneking">
+            <img class="hero-banner__logo" src="Christina-Logo-nog.png" alt="Christina Roberts Enneking">
+        </a>
+        <div class="hero-banner__inner">
             <span class="eyebrow">Work With Me</span>
             <h1>Two paths.<br><em>One question.</em></h1>
             <p class="lead">Whether you want the depth of one&#8209;on&#8209;one work or the strength of a brave group, every path here begins with the same question &mdash; who are you beneath what you've built?</p>
-            <div class="hero__divider"></div>
         </div>
+        <a href="#tier-i" class="hero-banner__scroll-cue" aria-label="Scroll to programs">
+            Begin
+            <span>&darr;</span>
+        </a>
     </section>
 
     <!-- ════════════════════════════════════════
          TIER 1 — PRIVATE & BESPOKE
     ════════════════════════════════════════ -->
-    <section class="tier">
+    <section class="tier" id="tier-i">
         <div class="container--wide">
             <div class="tier__header fade-in">
                 <span class="tier__numeral">I</span>
