@@ -165,21 +165,6 @@
             background: linear-gradient(180deg, transparent 0%, rgba(0, 51, 52, 0.55) 100%);
             pointer-events: none;
         }
-        .hero-banner__logo-link {
-            display: inline-block;
-            margin-bottom: 2.4rem;
-            opacity: 0.92;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .hero-banner__logo-link:hover {
-            opacity: 1;
-            transform: translateY(-1px);
-        }
-        .hero-banner__logo {
-            height: 64px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
         .hero-banner__inner {
             position: relative;
             max-width: 760px;
@@ -241,8 +226,6 @@
         }
         @media (max-width: 720px) {
             .hero-banner { min-height: 520px; height: 82vh; padding: 4rem 1.5rem 5rem; }
-            .hero-banner__logo { height: 54px; }
-            .hero-banner__logo-link { margin-bottom: 1.8rem; }
             .hero-banner h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
             .hero-banner .lead { font-size: 1rem; }
         }
@@ -530,9 +513,6 @@
          HERO BANNER (Smith Rock pano)
     ════════════════════════════════════════ -->
     <section class="hero-banner">
-        <a href="https://christinarobertsenneking.com" class="hero-banner__logo-link" aria-label="Christina Roberts Enneking">
-            <img class="hero-banner__logo" src="Christina-Logo-nog.png" alt="Christina Roberts Enneking">
-        </a>
         <div class="hero-banner__inner">
             <span class="eyebrow">Work With Me</span>
             <h1>Two paths.<br><em>One question.</em></h1>
